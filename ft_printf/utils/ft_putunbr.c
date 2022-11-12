@@ -6,11 +6,11 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 14:55:51 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/07 15:24:16 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:19:15 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
 int	ft_putunbr(int nbr)
 {

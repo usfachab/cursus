@@ -1,0 +1,3 @@
+hello there this is an exemple
+from demo file type txt to test
+your get_next_line yes allow it

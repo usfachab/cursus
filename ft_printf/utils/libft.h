@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 09:22:58 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/08 09:08:19 by yachaab          ###   ########.fr       */
+/*   Created: 2022/11/07 15:25:04 by yachaab           #+#    #+#             */
+/*   Updated: 2022/11/09 15:45:31 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
-}
+# include <unistd.h>
+# include <stdarg.h>
+
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int nbr);
+int	ft_putunbr(int nbr);
+int	ft_puthex(int hex, char param);
+int	ft_putptr(unsigned long ptr);
+#endif

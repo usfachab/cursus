@@ -6,11 +6,11 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:19:19 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/07 19:55:27 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:46:03 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
 int	ft_puthex(int hex, char param)
 {

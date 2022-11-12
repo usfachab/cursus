@@ -6,7 +6,7 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:16:44 by yachaab           #+#    #+#             */
-/*   Updated: 2022/10/31 20:28:04 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/08 09:02:16 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 	i = 0;
 	if (!set)
 		return (ft_strdup(s1));
+	if (!s1)
+		return (NULL);
 	while (ft_is_set(s1[i], set))
 		i++;
-	if (!s1[i])
-		return (ft_strdup(""));
 	len = ft_end_set(&s1[i], set);
 	tr = ft_calloc(len + 1, sizeof(char));
 	if (!tr)

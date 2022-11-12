@@ -6,16 +6,16 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 14:55:51 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/07 20:37:41 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:46:08 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
 int	ft_putnbr(int nbr)
 {
-	int			sign;
 	static int	i;
+	int			sign;
 
 	sign = 0;
 	i = 0;

@@ -6,11 +6,11 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 14:46:48 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/07 15:23:24 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:45:48 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
 int	ft_putstr(char *str)
 {

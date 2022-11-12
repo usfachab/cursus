@@ -6,7 +6,7 @@
 #    By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 11:18:46 by yachaab           #+#    #+#              #
-#    Updated: 2022/11/07 17:23:52 by yachaab          ###   ########.fr        #
+#    Updated: 2022/11/09 11:28:31 by yachaab          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CFLAGS += -g3
+CFLAGS += -Wextra -Werror -Wall -g3
 
 AR = ar rc 
 
@@ -38,6 +38,6 @@ clean :
 	@$(RM) $(OBJ)
 
 fclean : clean 
-	@$(RM) $(NAME) a.out
+	@$(RM) $(NAME)
 
 re : fclean all

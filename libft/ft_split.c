@@ -6,12 +6,12 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:16:09 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/04 19:52:09 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/08 09:27:12 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 char	**ft_free(char **word)
 {
 	int	i;
@@ -33,6 +33,8 @@ int	count_word(const char *string, char delim)
 
 	i = 0;
 	count = 0;
+	if (!string)
+		return (0);
 	while (string[i])
 	{
 		if (string[i] != delim
@@ -46,7 +48,7 @@ int	count_word(const char *string, char delim)
 char	**word_alloc(const char *s, char d)
 {
 	char	**word;
-
+	
 	word = (char **)ft_calloc(sizeof(char *), count_word(s, d) + 1);
 	return (word);
 }
@@ -96,4 +98,13 @@ char	**ft_split(const char *string, char delim)
 			return (ft_free(word));
 	}
 	return (word);
+}
+
+int main()
+{
+	char **word = ft_split(NULL, ' ');
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%s\n", word[i]);
+	}
 }
