@@ -6,11 +6,12 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:12:33 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/12 09:15:37 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/14 06:34:58 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 static int	ft_check_param(const char param, va_list args)
 {
@@ -36,21 +37,19 @@ static int	ft_check_param(const char param, va_list args)
 	return (0);
 }
 
-static int	operation(const char *placeholder, va_list args)
+int	ft_printf(const char *placeholder, ...)
 {
-	int	i;
-	int	s;
+	int		i;
+	int		s;
+	va_list	args;
 
 	i = 0;
 	s = 0;
+	va_start(args, placeholder);
 	while (placeholder[i])
 	{
 		if (placeholder[i] == '%')
 		{
-			while (placeholder[i + 1] == ' ')
-				i++;
-			if (placeholder[i] == ' ')
-				s += ft_putchar(' ');
 			if (placeholder[i + 1] == '\0')
 				break ;
 			s += ft_check_param(placeholder[i + 1], args);
@@ -60,35 +59,6 @@ static int	operation(const char *placeholder, va_list args)
 			s += ft_putchar(placeholder[i]);
 		i++;
 	}
-	return (s);
-}
-
-int	ft_printf(const char *placeholder, ...)
-{
-	int		s;
-	va_list	args;
-
-	s = 0;
-	va_start(args, placeholder);
-	s = operation(placeholder, args);
 	va_end(args);
 	return (s);
 }
-
-/*
-	1- va_list create a pointer that well point to 
-	the first element of the VARIABLE ARGUMENT LIST.
-	currently args is UNINTIALIZED
-*/
-
-/* 
-	2- va_start now we make args point to
-	the first argument in the list "VARIABLE ARGUMENT LIST".
-	PLACEHOLDER argument is called the "LAST MANDATORY ARGUMENT"
-*/
-
-/*
-	3- va_args(args, type) return the value of the
-	argument pointer by args and update to pointer
-	the next argument in this list
-*/

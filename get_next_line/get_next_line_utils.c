@@ -6,36 +6,37 @@
 /*   By: yachaab <yachaab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:56:35 by yachaab           #+#    #+#             */
-/*   Updated: 2022/11/10 13:31:10 by yachaab          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:27:20 by yachaab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int	check_new_line(char *buffer)
+int	is_new_line(char *readed_line)
 {
 	int	i;
 
 	i = 0;
-	while (*buffer)
+	while (readed_line[i])
 	{
-		if (buffer[i] == '\n')
-			return (1);
-		buffer++;
+		if (readed_line[i] == '\n')
+			return (i + 1);
+		i++;
 	}
-	return (0);
+	return (-1);
 }
 
+int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+		i++;
+	return (i);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -61,7 +62,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ptr[i + j] = s2[j];
 		j++;
 	}
-	ptr[i + j] = 0;
+	ptr[j + i] = 0;
 	return (ptr);
 }
 
@@ -82,5 +83,7 @@ char	*ft_strdup(const char *s1)
 		ptr[i] = s1[i];
 		i++;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
+
